@@ -12,7 +12,7 @@
 </head>
 
 <body id="table">
-    <div id="not" style="background-color: rgba(0, 0, 0, 0.5);color: white;border: none;position: fixed;bottom: 0%;width: 100%;text-align: justify">
+    <div id="not" style="background-color: rgba(0, 0, 0, 0.5);color: white;border: none;position: fixed;bottom: 0%;width: 100%;text-align: justify;z-index:555 ;">
     
         <span style="width: 100%;">For black background and white color It will auto close after 15sec
         <i class="fas fa-times" onclick="remove()" id="not"  style="float:right;font-size:xx-large"></i>
@@ -405,11 +405,11 @@
   
   
               <div id="button" style="line-height: 30px"></div>
-          <button id="order" onclick="check()">Order</button>
+          <button id="order" onclick="hello()">Order</button>
   <br>
   <br>
   
-          <a href="../product.html" style="float: right;padding-right: 50%;line-height:unset;font-size: larger">Veiws in full screen</a>
+          <a href="product.html" style="float: right;padding-right: 50%;line-height:unset;font-size: larger">Veiws in full screen</a>
       </div>
     </div>
 <span onclick="add()"style="position: absolute;top: 35%;right: 10%;font-size: xx-large;"><i class="fas fa-angle-right" style="font-size: larger"></i></span>
@@ -426,6 +426,14 @@
 <script src="js.js"></script>
 <script> 
  
+    
+ function hello(){
+            if(document.getElementById("if").innerHTML == "login"){
+                alert("Login")
+                location.href="login.html"
+            }
+            else(alert("A demo website"))
+        }
  
  var images = [1, 2, 3, 4,5,6,7,8];
     var totalImages = images.length;

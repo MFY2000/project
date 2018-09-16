@@ -136,6 +136,11 @@ table{
       <th>Total</th>
        <th id="fortotal" colspan="3"></th>
     </tr>
+
+    <tr>
+      <td colspan="6"></td>
+      <td rowspan="2"><button onclick="hello()">Order</button></td>
+    </tr>
   </tfoot>
   
   
@@ -157,6 +162,14 @@ table{
 
 <script>
 
+    
+    function hello(){
+            if(document.getElementById("if").innerHTML == "login"){
+                alert("Login")
+                location.href="login.html"
+            }
+            else(alert("A demo website"))
+        }
 var obj =[
 {name:"Bages For Women",src : "image/Bag/1.jpg",price:"18",s:"$15.5dollar"},
 {name:"Bages For Women",src : "image/Bag/2.jpg",price:"12",s:"$15dollar"},
@@ -246,7 +259,7 @@ function show(obj){
 
 var array = localStorage.getItem("favourite");
 array = JSON.parse(array)
-console.log()
+console.log() 
 if(array!=null&&array.length!=0){
 for(var i = 0 ; i<array.length;i++){
 
@@ -254,7 +267,7 @@ for(var i = 0 ; i<array.length;i++){
 // // // //  console.log(arr)
 
 var td = document.getElementById("fordata").innerHTML;
-var newTd = "<tr class='tr'><td width='10%' >"+ i +"</td><td width='10%'><img src='"+obj[arr].src+"' width='50%' ></td><td width='10%' >"+ arr +"</td><td width='10%'> $ " +obj[arr].price +" dollar</td><td width='10%' ><input min='0' max='25' type='number' id="+ arr+" value='1' class='inpQty' name='qty' onchange='calculateTotal()'>  </td><td width='10%' id=total" + i +" ></td>      <td width='10%' ><button onclick='deleted("+ arr +")' >Deleted</button></td></tr>"
+var newTd = "<tr id='tr'"+arr+ "><td width='10%' >"+ i +"</td><td width='10%'><img src='"+obj[arr].src+"' width='50%' ></td><td width='10%' >"+ arr +"</td><td width='10%'> $ " +obj[arr].price +" dollar</td><td width='10%' ><input min='0' max='25' type='number' id="+ arr+" value='1' class='inpQty' name='qty' onchange='calculateTotal()'>  </td><td width='10%' id=total" + i +" ></td>      <td width='10%' ><button onclick='deleted("+ arr +")' >Deleted</button></td></tr>"
 td = td + newTd
 document.getElementById("fordata").innerHTML = td;
 
@@ -265,7 +278,7 @@ document.getElementById("second").innerHTML="<h1>No Favourite</h1>"
 document.getElementById("Favourite").innerHTML=""
 }
 }
-
+ 
 
 function deleted(id){
   var array = JSON.parse(localStorage.getItem("favourite"));
@@ -276,7 +289,7 @@ function deleted(id){
 // // // console.log(array)
 var array = JSON.stringify(array);
 localStorage.setItem("favourite",array)
-location.reload(false);
+show(obj)
 }
 
  

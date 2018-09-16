@@ -118,9 +118,6 @@ var array = localStorage.getItem("favourite");
 
 function shower(){
 var h = localStorage.getItem("any");
-if(array.indexOf(h)!=-1){
-    document.getElementById(h).style.color="red"
-}
 
 var v = document.getElementById("h1").innerHTML = obj[h].name,
 s =document.getElementById("image").setAttribute("src", obj[h].src );
